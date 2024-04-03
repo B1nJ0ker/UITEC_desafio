@@ -1,0 +1,32 @@
+
+<div id="mainDiv" class="shadow p-3 mb-5 rounded">  
+    <h4 class="d-flex justify-content-center text-white">Lista de Categorias</h4>
+    <br>
+    <table class="table table-dark table-striped table-hover" id="tabela_produtos">
+      <thead>
+        <tr>
+          <th scope="col">Nome</th>
+          <th>
+            <form [formGroup]="form" id="salvar_cat_form" class="form-group row justify-content-center" (ngSubmit)="submit()">
+              <div class="col-sm-6">
+                <input formControlName="nome_cat"class="form-control"  placeholder="Nome da Categoria" type="text" maxlength="100" name="nome_cat" >
+              </div>
+              <div class="col-sm-3">
+                <button [disabled]="!form.valid" class="btn btn-info d-flex justify-content-around">Adicionar Categoria</button>
+              </div>
+              
+            </form>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let categoria of categorias$ | async">
+          <th scope="row">{{ categoria.nome_cat }}</th>
+          <td class="d-flex justify-content-around">
+            <button type="button" (click)="deleteCategoria(categoria.id)" class="btn btn-outline-danger">REMOVER</button>
+          </td>
+        </tr>
+      </tbody>
+      
+    </table>
+  </div>
