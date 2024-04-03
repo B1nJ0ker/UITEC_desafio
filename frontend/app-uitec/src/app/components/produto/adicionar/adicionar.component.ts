@@ -62,7 +62,7 @@ export class AdicionarComponent implements OnInit{
     this.produtoService.create(this.form.value).subscribe(res => {
       if(res.success){
         this.alertService.success(res.message);
-        this.router.navigateByUrl('produto/listar');
+        this.router.navigateByUrl('produto');
       }
       else{
         let problemString = "";
