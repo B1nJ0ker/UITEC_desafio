@@ -59,7 +59,6 @@ export class AdicionarComponent implements OnInit{
   }
 
   submit(){    
-    console.log(this.form.value);
     this.produtoService.create(this.form.value).subscribe(res => {
       if(res.success){
         this.alertService.success(res.message);
@@ -76,7 +75,7 @@ export class AdicionarComponent implements OnInit{
         }
         this.alertService.error(res.message+problemString);
       }
-      console.log(res);
+      //console.log(res);
       
     })
   }

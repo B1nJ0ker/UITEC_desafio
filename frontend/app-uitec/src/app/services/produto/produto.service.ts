@@ -10,7 +10,7 @@ import { GeneralConfig } from '../../common/general.config';
   providedIn: 'root'
 })
 export class ProdutoService {
-  private apiURL = GeneralConfig.apiURL+"/api/produto/";
+  private apiURL = GeneralConfig.apiURL+"api/produto/";
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
